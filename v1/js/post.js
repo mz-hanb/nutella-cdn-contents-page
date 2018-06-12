@@ -21,17 +21,18 @@ function nutella_scrollTop(scrolltop){
 
 
 $(document).ready(function () {
-  nutella_resizeIframe();
+  // nutella_resizeIframe();
 });
-$(window).on('load', nutella_resizeIframe);
+// $(window).on('load', nutella_resizeIframe);
 
 var nutellaTO;
-$(window).on('resize', function () {
-  clearTimeout(nutellaTO);
-  nutellaTO = setTimeout(nutella_resizeIframe, 500);
-});
+// $(window).on('resize', function () {
+//   clearTimeout(nutellaTO);
+//   nutellaTO = setTimeout(nutella_resizeIframe, 500);
+// });
 
 //back to top
 $(".backto_top").on('click',function(){
+  console.log( 'click scrollTop> 0');
 nutella_scrollTop(0)
 });

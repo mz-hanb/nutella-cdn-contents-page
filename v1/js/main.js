@@ -1,7 +1,4 @@
 
-
-
-
 var app = new Vue({
   el: '#pentacle-app', 
   data: {
@@ -14,7 +11,3 @@ var app = new Vue({
 
   }
 });
-
-
-
-console.log( app );
