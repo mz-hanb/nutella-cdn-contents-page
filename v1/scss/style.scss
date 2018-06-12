@@ -1,5 +1,5 @@
 
-.pentacle-app{
+#pentacle-app{
   border: 10px solid purple;
   min-width: 600px;
   height: 100vh;
@@ -8,4 +8,11 @@
 
   background: #555;
   color: #fff;
+
+
+  .backto_top{
+    position: absolute;
+    bottom: 10px;
+  }
+
 }
