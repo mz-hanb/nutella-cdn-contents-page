@@ -1,10 +1,12 @@
-
+body, html{
+  background: #555;
+  color: #fff;
+  overflow: hidden;
+}
 #pentacle-app{
   border: 10px solid purple;  
   text-align: center;
-  margin: 0 auto;
-  background: #555;
-  color: #fff;
+  margin: 0 auto;  
 
   .backto_top{
     position: absolute;

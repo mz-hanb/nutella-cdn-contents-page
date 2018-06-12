@@ -31,8 +31,3 @@ var nutellaTO;
 //   nutellaTO = setTimeout(nutella_resizeIframe, 500);
 // });
 
-//back to top
-$(".backto_top").on('click',function(){
-  console.log( 'click scrollTop> 0');
-nutella_scrollTop(0)
-});

@@ -11,3 +11,10 @@ var app = new Vue({
 
   }
 });
+
+
+//back to top
+$(".backto_top").on('click',function(){
+  alert('');
+  nutella_scrollTop(0)
+});
