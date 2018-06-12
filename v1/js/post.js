@@ -21,7 +21,7 @@ function nutella_scrollTop(scrolltop){
 
 
 $(document).ready(function () {
-  // nutella_resizeIframe();
+  nutella_resizeIframe();
 });
 // $(window).on('load', nutella_resizeIframe);
 
