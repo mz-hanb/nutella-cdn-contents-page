@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>iframe</title>
+  <style>
+    body, html{
+      background: #eee;
+    }
+    .main-container{
+      
+    }
+    button{
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>    
+  <div class="container-fluid main-container">
+    <button type="button" class="backto_top">to top</button>
+  </div>  
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+
+  function nutella_resizeIframe() {
+      if (parent.postMessage) {
+          var body = $("body,html");
+          body.height('auto');
+          var height = $("body").outerHeight();
+          parent.postMessage({
+              css:{
+                  height: height
+              }
+          }, '*');
+      }
+  }
+  function nutella_scrollTop(scrolltop){
+      if (parent.postMessage) {
+          parent.postMessage({
+              scrolltop:scrolltop
+          }, '*');
+      }
+  }
+
+
+  $(document).ready(function () {
+      nutella_resizeIframe();
+  });
+  $(window).on('load', nutella_resizeIframe);
+
+  var nutellaTO;
+  $(window).on('resize', function () {
+      clearTimeout(nutellaTO);
+      nutellaTO = setTimeout(nutella_resizeIframe, 500);
+  });
+
+ //back to top
+ $(".backto_top").on('click',function(){
+  nutella_scrollTop(0)
+ });
+
+
+</script>
+</body>
+</html>

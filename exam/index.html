@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #iframe-container{
+      position: relative;
+      width: 100%;
+      height: 600px;
+      -webkit-overflow-scrolling: touch;
+    }
+    #iframe_container #iframe_nutella{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0; 
+      top: 0;
+    }
+  </style>
+  
+
+</head>
+<body>  
+  <div>부모~</div>
+  <div id="iframe-container">
+      <!-- <iframe src="./child.html" id="iframe_nutella" width="100%" marginwidth="0" height="1200" marginheight="0" align="top" scrolling="no" frameborder="0"></iframe>   -->
+      <iframe src="https://mz-hanb.github.io/nutella-cdn-contents-page/v1/" id="iframe_nutella" width="100%" marginwidth="0" height="1200" marginheight="0" align="top" scrolling="no" frameborder="0"></iframe>  
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#iframe_nutella").width($("#iframe_container").width());
+    });
+    $(window).resize(function () {
+      $("#iframe_nutella").width($("#iframe_container").width());
+    });
+
+    var default_css = {
+      height: 1200
+    };
+    var resize_frame = function (event) {
+      // if (event.origin == "https://promo2.nutella.hu") {
+        
+      // }
+
+      var iframe = $('#iframe_container');
+        if (typeof event.data.css !== 'undefined') {
+          jQuery.extend(default_css, event.data.css);
+          iframe.css(default_css);
+        }
+        if (typeof event.data.scrolltop !== 'undefined') {
+          $("html,body").animate({
+            scrollTop: event.data.scrolltop
+          }, 200);
+        }
+
+    };
+    if (window.addEventListener) {
+      window.addEventListener("message", resize_frame, false);
+    }
+    else if (window.attachEvent) {
+      window.attachEvent("onmessage", resize_frame);
+    }
+  </script> 
+ 
+</body>
+</html>
