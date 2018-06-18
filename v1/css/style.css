@@ -1,2 +1,2 @@
-body,html{background:#555;color:#fff;overflow:hidden}#pentacle-app{border:10px solid purple;text-align:center;margin:0 auto}#pentacle-app .backto_top{position:absolute;bottom:10px}
+body,html{background:#555;color:#fff;overflow:hidden}#pentacle-app{border:10px solid purple;text-align:center;margin:0 auto}#pentacle-app *{margin:0;padding:0;box-sizing:border-box}#pentacle-app section{overflow:hidden;min-height:30px;margin:10px;padding:30px;border:1px solid #d5d5d5}#pentacle-app .player{width:3px solid #fff}#pentacle-app .backto_top{margin:30px}
 /*# sourceMappingURL=style.css.map */

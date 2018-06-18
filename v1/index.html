@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,57 @@
   <title>iframe contents</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
   <!-- 
     iframe video, 
     youtube video, 
     video, 
     img    
-   -->    
-   <div id="pentacle-app" class="pentacle-app">
-     <h1>{{greeting}}</h1>
+   -->
+  <div id="pentacle-app" class="pentacle-app">
+    <!-- <h1>{{greeting}}</h1> -->
 
-     <!-- iframe video -->
-     <div class="contents-wrap iframe-video">
-       <h2>iframe youtube video</h2>
-        <iframe id="player" type="text/html" width="640" height="360"
-        src="https://www.youtube.com/embed/xRbPAVnqtcs?enablejsapi=1&origin=http://example.com"
+    <!-- iframe video -->
+    <section class="contents-wrap iframe-video">
+      <h2>iframe youtube video</h2>
+      <iframe id="player-inline" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/xRbPAVnqtcs?enablejsapi=1&origin=http://example.com"
         frameborder="0"></iframe>
-    </div>
+    </section>
 
-    <div>
+    <!--  -->
+    <section>
+      <h2>youtube player</h2>
+      <div id="player" class="player"></div>
+    </section>
+
+    <section>
+      <h2>vue test</h2>
+      <div class="img">        
+        <p>
+          <input type="radio" v-model="feeling" name="mood" id="smile">
+          <label for="smile">smile</label>
+          <input type="radio" v-model="feeling" name="mood" id="sad">
+          <label for="sad">sad</label>
+        </p>
+        <img :src="feelingImg" alt="">
+      </div>
+    </section>
+
+    <section>
       <button id="btn" class="backto_top" type="button">backto_top</button>
-    </div>
-   </div>
-   <!-- end || -->
+    </section>   
 
-   <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-   <script src="https://unpkg.com/vue"></script>   
-   <script src="./js/main.js"></script>  
-   <script src="./js/post.js"></script>  
+  </div>
+  <!-- end || pentacle-app -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>    
+  <script src="https://unpkg.com/vue"></script>
+  <script src="./js/post.js"></script>
+  <script src="./js/main.js"></script>  
+  <script src="./js/player.js"></script>
+
 </body>
+
 </html>

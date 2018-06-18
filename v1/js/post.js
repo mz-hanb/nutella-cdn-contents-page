@@ -4,6 +4,9 @@ function nutella_resizeIframe() {
       var body = $("body,html");
       body.height('auto');
       var height = $("body").outerHeight();
+
+      console.log( 'fn:nutella_resizeIframe> '+ height);
+
       parent.postMessage({
           css:{
               height: height
@@ -20,14 +23,15 @@ function nutella_scrollTop(scrolltop){
 }
 
 
-$(document).ready(function () {
-  nutella_resizeIframe();
-});
-// $(window).on('load', nutella_resizeIframe);
+// $(document).ready(function () {
+//   nutella_resizeIframe();
+// });
+
+$(window).on('load', nutella_resizeIframe);
 
 var nutellaTO;
-// $(window).on('resize', function () {
-//   clearTimeout(nutellaTO);
-//   nutellaTO = setTimeout(nutella_resizeIframe, 500);
-// });
+$(window).on('resize', function () {
+  clearTimeout(nutellaTO);
+  nutellaTO = setTimeout(nutella_resizeIframe, 500);
+});
 
